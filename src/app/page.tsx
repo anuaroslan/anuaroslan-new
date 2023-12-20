@@ -247,8 +247,7 @@ export default function Home() {
               }}
               mb={40}
             >
-              If you are looking to hire, I’m currently available for freelance
-              work
+              If you are looking to work together, just reach out to me
             </Text>
             <Button color="grey" size="lg">
               <IconMail size={20} />
