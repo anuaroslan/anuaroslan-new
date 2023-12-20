@@ -1,113 +1,303 @@
-import Image from 'next/image'
+"use client";
+
+import {
+  Button,
+  Container,
+  Group,
+  SimpleGrid,
+  Stack,
+  Text,
+  Title,
+  Image,
+  Grid,
+  Center,
+} from "@mantine/core";
+
+import styled from "@emotion/styled";
+import {
+  IconArrowDown,
+  IconArrowDownTail,
+  IconMail,
+  IconRecordMail,
+} from "@tabler/icons-react";
+import ProfileImage from "../../public/images/portrait.jpg";
+import FeatureImage from "../../public/images/featured-img.png";
+import VisualImage from "../../public/images/visual-exploration-img.png";
+import RealeasesIMAGE from "../../public/images/releases-img.png";
+import anuar1 from "../../public/images/anuar-1.jpeg";
+import anuar2 from "../../public/images/anuar-2.jpg";
+import anuar3 from "../../public/images/anuar-3.jpg";
+import anuar4 from "../../public/images/anuar-4.jpg";
+import show1 from "../../public/images/show-1.jpg";
+import show2 from "../../public/images/show-2.jpg";
+import show3 from "../../public/images/show-3.png";
+import show4 from "../../public/images/show-4.jpg";
+import show5 from "../../public/images/show-5.jpg";
+import show6 from "../../public/images/show-6.jpg";
+import release1 from "../../public/images/release-1.png";
+import release2 from "../../public/images/release-2.jpg";
+import release3 from "../../public/images/release-3.png";
+import NextImage from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
+    <MainWrapper>
+      <HeroSection>
+        <Container size={"lg"}>
+          <Grid justify="center" align="center">
+            <Grid.Col span={8}>
+              <Title
+                style={{
+                  color: "#dedede",
+                  fontWeight: "bold",
+                  fontSize: 64,
+                  lineHeight: "70px",
+                }}
+                mb={20}
+              >
+                Hi, I am Anuar Roslan A DJ & Music Producer based in Kuala
+                Lumpur.
+              </Title>
+              <Text style={{ color: "#959595", fontSize: 24 }} mb={60}>
+                Anuar Roslan has always pushed his unique blend of Hip Hop / R&B
+                / Soul / Afro, sounding ways to infuse his take on these
+                evergreen genres.
+              </Text>
+              <Button color="grey" size="lg">
+                <IconMail size={20} />
+                <Text ml={10} size="md">
+                  anuaroslan@gmail.com
+                </Text>
+              </Button>
+            </Grid.Col>
+            <Grid.Col span={4}>
+              <Image
+                component={NextImage}
+                src={ProfileImage}
+                w={400}
+                h={400}
+                radius={6666}
+                alt={""}
+              />
+            </Grid.Col>
+          </Grid>
+        </Container>
+      </HeroSection>
+      <FeaturedWorkSection>
+        <Container size={"lg"}>
+          <Group mb={60}>
+            <IconArrowDown color="#DEDEDE" />
+            <Text style={{ color: "#959595", fontWeight: "bold" }}>
+              FEATURED WORK
+            </Text>
+          </Group>
+          <Group justify="space-between">
+            <Stack mb={180} gap={30}>
+              <Image
+                component={NextImage}
+                src={anuar1}
+                w={542}
+                h={888}
+                alt={""}
+              />
+              <Image
+                component={NextImage}
+                src={anuar2}
+                w={542}
+                h={888}
+                alt={""}
+              />
+            </Stack>
+            <Stack gap={30}>
+              <Image
+                component={NextImage}
+                src={anuar3}
+                w={542}
+                h={888}
+                alt={""}
+              />
+              <Image
+                component={NextImage}
+                src={anuar4}
+                w={542}
+                h={888}
+                alt={""}
+              />
+            </Stack>
+          </Group>
+        </Container>
+      </FeaturedWorkSection>
+      <VisualExplorationSection>
+        <Container size={"lg"}>
+          <Group justify="center" mb={60} mt={100}>
+            <Text
+              style={{ color: "#DEDEDE", fontWeight: "bold", fontSize: 36 }}
+            >
+              Shows
+            </Text>
+          </Group>
+          <SimpleGrid cols={3}>
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              component={NextImage}
+              src={show1}
+              w={350}
+              h={350}
+              alt={""}
+              radius={"sm"}
             />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+            <Image
+              component={NextImage}
+              src={show2}
+              w={350}
+              h={350}
+              alt={""}
+              radius={"sm"}
+            />
+            <Image
+              component={NextImage}
+              src={show3}
+              w={350}
+              h={350}
+              alt={""}
+              radius={"sm"}
+            />
+            <Image
+              component={NextImage}
+              src={show4}
+              w={350}
+              h={350}
+              alt={""}
+              radius={"sm"}
+            />
+            <Image
+              component={NextImage}
+              src={show5}
+              w={350}
+              h={350}
+              alt={""}
+              radius={"sm"}
+            />
+            <Image
+              component={NextImage}
+              src={show6}
+              w={350}
+              h={350}
+              alt={""}
+              radius={"sm"}
+            />
+          </SimpleGrid>
+        </Container>
+      </VisualExplorationSection>
+      <ReleasesSection>
+        <Container size={"lg"}>
+          <Group justify="center" mb={60} mt={150}>
+            <Text
+              style={{ color: "#DEDEDE", fontWeight: "bold", fontSize: 36 }}
+            >
+              Releases
+            </Text>
+          </Group>
+          <SimpleGrid cols={3}>
+            <Image
+              component={NextImage}
+              src={release1}
+              w={350}
+              h={560}
+              alt={""}
+              radius={"sm"}
+            />
+            <Image
+              component={NextImage}
+              src={release2}
+              w={350}
+              h={560}
+              alt={""}
+              radius={"sm"}
+            />
+            <Image
+              component={NextImage}
+              src={release3}
+              w={350}
+              h={560}
+              alt={""}
+              radius={"sm"}
+            />
+          </SimpleGrid>
+        </Container>
+      </ReleasesSection>
+      <ContactSection>
+        <Container size={"lg"}>
+          <Stack justify="center" align="center" gap={10} mt={200} mb={120}>
+            <Title
+              style={{
+                color: "#dedede",
+                fontWeight: "bold",
+                fontSize: 36,
+              }}
+              mb={20}
+            >
+              Contact Me
+            </Title>
+            <Text
+              style={{
+                color: "#959595",
+                fontSize: 24,
+                width: "60%",
+                textAlign: "center",
+              }}
+              mb={40}
+            >
+              If you are looking to hire, I’m currently available for freelance
+              work
+            </Text>
+            <Button color="grey" size="lg">
+              <IconMail size={20} />
+              <Text ml={10} size="md">
+                anuaroslan@gmail.com
+              </Text>
+            </Button>
+          </Stack>
+        </Container>
+      </ContactSection>
+    </MainWrapper>
+  );
 }
+
+const MainWrapper = styled.div`
+  background-color: #292929;
+`;
+
+const HeroSection = styled.div`
+  background-color: #292929;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+`;
+
+const FeaturedWorkSection = styled.div`
+  background-color: #292929;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
+const VisualExplorationSection = styled.div`
+  background-color: #292929;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
+const ReleasesSection = styled.div`
+  background-color: #292929;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
+const ContactSection = styled.div`
+  background-color: #292929;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+`;
